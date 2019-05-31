@@ -1,0 +1,16 @@
+syntax = "proto3";
+package grpc_streaming;
+
+message DisplayRequest {
+    string processID = 1;
+}
+
+message DisplayResponse {
+    string code = 1;
+    string info =2;
+}
+
+service StreamingAPI {
+    rpc DisplayMessage (DisplayRequest) returns (DisplayResponse);
+    rpc DisplayStream (DisplayRequest) returns (stream DisplayResponse);
+}
