@@ -35,5 +35,4 @@ run-proxy:
 			--log-level trace
 
 run-server:
-	go build ./server/cmd
-	./cmd
+	go run server/server/*.go
